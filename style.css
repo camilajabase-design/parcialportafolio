@@ -1,0 +1,163 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN DE PALETA (Estética minimalista y limpia)
+   ========================================================================== */
+:root {
+    --color-fondo: #f9f9f9;       /* Blanco sutil para reducir la fatiga visual */
+    --color-texto: #111111;       /* Negro casi puro para un contraste nítido */
+    --color-secundario: #666666;  /* Gris medio para jerarquías secundarias y detalles */
+    --color-acento: #0033ff;      /* Azul eléctrico sutil y conceptual para los enlaces */
+    --fuente-titulos: 'Syne', sans-serif;
+    --fuente-cuerpo: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES (Optimización de lectura en pantalla)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    line-height: 1.8;          /* Interlineado amplio para una lectura descansada */
+    max-width: 680px;          /* Caja de texto controlada (evita líneas demasiado largas) */
+    margin: 0 auto;            /* Centra el contenedor en la pantalla */
+    padding: 4rem 2rem;        /* Márgenes generosos alrededor del contenido */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA SEMÁNTICA (Estructura h1, h2, p, a)
+   ========================================================================== */
+h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;   /* Tracking ajustado para títulos pesados */
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase; /* Aporte estructural y conceptual */
+    letter-spacing: 0.05em;
+    color: var(--color-secundario);
+    margin-top: 3.5rem;
+    margin-bottom: 1.2rem;
+}
+
+p {
+    font-weight: 300;          /* Peso liviano para alta legibilidad en bloques de texto */
+    margin-bottom: 1.5rem;
+    text-align: justify;       /* Bloques homogéneos */
+}
+
+strong {
+    font-weight: 500;          /* Destacado sutil, no invasivo */
+}
+
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--color-texto);
+    border-bottom: 1px solid var(--color-texto); /* Subrayado elegante al pasar el cursor */
+}
+
+/* Enlaces de navegación de ida y vuelta */
+.nav-link {
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    color: var(--color-texto);
+    border-bottom: 1px solid var(--color-texto);
+}
+
+.nav-link:hover {
+    color: var(--color-acento);
+    border-bottom: 1px solid var(--color-acento);
+}
+
+/* Ubicación del enlace al final del recorrido */
+.navegacion-final {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   CONTENEDORES MULTIMEDIA E IMÁGENES
+   ========================================================================== */
+.imagen-contenedor, .video-contenedor {
+    margin: 2.5rem 0;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Filtro sutil para homogeneizar imágenes externas con tu estética */
+    filter: grayscale(100%) contrast(102%); 
+    transition: filter 0.4s ease;
+}
+
+img:hover {
+    filter: grayscale(0%) contrast(100%); /* Recupera color al interactuar */
+}
+
+/* Contenedor fluido para el video embebido (mantiene proporción 16:9) */
+.video-contenedor {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-contenedor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA Y RECURSOS
+   ========================================================================== */
+.atribucion {
+    font-size: 0.75rem;
+    color: var(--color-secundario);
+    line-height: 1.4;
+    margin-top: 0.8rem;
+    text-align: left;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 4rem 0 2rem 0;
+}
+
+.licencia {
+    font-size: 0.8rem;
+    color: var(--color-secundario);
+    line-height: 1.5;
+}
